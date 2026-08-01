@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Market Chatter Digest — 01.08.2026</title>
+<style>
+  :root{
+    --bg:#0a0d0a; --panel:#0f140f; --border:#1e2a1e; --green:#39ff88;
+    --dim:#5a7a5a; --amber:#ffb454; --red:#ff5f5f; --text:#c8e6c8; --white:#eafff0;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font-family:"SF Mono","JetBrains Mono","Courier New",monospace;
+    font-size:14px; line-height:1.5;
+  }
+  .wrap{max-width:900px; margin:0 auto; padding:24px 20px 60px;}
+  header{border-bottom:1px solid var(--border); padding-bottom:16px; margin-bottom:20px;}
+  .title{color:var(--green); font-size:20px; font-weight:700; letter-spacing:1px;}
+  .subtitle{color:var(--dim); font-size:12px; margin-top:4px;}
+  .tape{
+    overflow:hidden; white-space:nowrap; border:1px solid var(--border);
+    background:var(--panel); border-radius:4px; margin:16px 0 24px; padding:10px 0;
+  }
+  .tape-inner{display:inline-block; animation:scroll 40s linear infinite;}
+  .tape-inner span{display:inline-block; padding:0 18px; font-size:12px;}
+  .dot{display:inline-block; width:7px; height:7px; border-radius:50%; margin-right:6px;}
+  .dot.active{background:var(--green); box-shadow:0 0 6px var(--green);}
+  .dot.silent{background:var(--dim);}
+  @keyframes scroll{ 0%{transform:translateX(0);} 100%{transform:translateX(-50%);} }
+  .section{margin-bottom:28px;}
+  .section-head{
+    color:var(--amber); font-size:12px; text-transform:uppercase; letter-spacing:2px;
+    margin-bottom:12px; border-left:3px solid var(--amber); padding-left:8px;
+  }
+  .theme{
+    border:1px solid var(--border); background:var(--panel); border-radius:4px;
+    padding:12px 14px; margin-bottom:10px;
+  }
+  .theme-rank{color:var(--dim); font-size:11px;}
+  .theme-tag{display:inline-block; font-size:10px; padding:2px 7px; border-radius:3px; margin-left:8px; vertical-align:middle;}
+  .tag-cross{background:rgba(57,255,136,0.12); color:var(--green); border:1px solid rgba(57,255,136,0.35);}
+  .tag-single{background:rgba(255,180,84,0.1); color:var(--amber); border:1px solid rgba(255,180,84,0.3);}
+  .theme-title{color:var(--white); font-size:14px; font-weight:600; margin:4px 0 6px;}
+  .theme-body{color:var(--text); font-size:13px;}
+  .theme-src{color:var(--dim); font-size:11px; margin-top:6px;}
+  .tickers{margin-top:6px;}
+  .ticker{
+    display:inline-block; background:rgba(57,255,136,0.08); color:var(--green);
+    border:1px solid rgba(57,255,136,0.3); font-size:11px; padding:2px 8px;
+    border-radius:3px; margin-right:6px; margin-top:4px;
+  }
+  .account-block{
+    border:1px solid var(--border); background:var(--panel); border-radius:4px;
+    margin-bottom:14px; overflow:hidden;
+  }
+  .account-head{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:9px 14px; background:rgba(57,255,136,0.05); border-bottom:1px solid var(--border);
+  }
+  .handle{color:var(--green); font-weight:700; font-size:13px;}
+  .count{color:var(--dim); font-size:11px;}
+  .tweet{padding:10px 14px; border-bottom:1px solid var(--border); font-size:13px;}
+  .tweet:last-child{border-bottom:none;}
+  .tweet-text{color:var(--text); white-space:pre-wrap;}
+  .tweet-meta{color:var(--dim); font-size:11px; margin-top:5px;}
+  .tweet-meta a{color:var(--dim);}
+  .silent-list{
+    display:flex; flex-wrap:wrap; gap:8px; border:1px solid var(--border);
+    background:var(--panel); border-radius:4px; padding:14px;
+  }
+  .silent-pill{
+    color:var(--dim); font-size:12px; border:1px solid var(--border);
+    padding:4px 10px; border-radius:12px;
+  }
+  footer{color:var(--dim); font-size:11px; margin-top:30px; border-top:1px solid var(--border); padding-top:14px;}
+  .macro-note{
+    border-left:3px solid var(--red); background:rgba(255,95,95,0.06); padding:8px 12px;
+    font-size:12px; color:var(--text); margin-top:6px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="title">&gt; MARKET_CHATTER_DIGEST</div>
+    <div class="subtitle">01.08.2026 · window: 30.07.2026–01.08.2026 (36–40h, SGT-adjusted) · 15 tracked handles · sort: latest, no replies</div>
+  </header>
+
+  <div class="tape">
+    <div class="tape-inner" id="tapeInner"></div>
+  </div>
+
+  <div class="section">
+    <div class="section-head">Ranked Themes</div>
+
+    <div class="theme">
+      <span class="theme-rank">#1</span><span class="theme-tag tag-cross">CROSS-ACCOUNT · 2 handles</span>
+      <div class="theme-title">"The Leopold Bottom" — Situational Awareness Fund drawdown as capitulation signal</div>
+      <div class="theme-body">
+        Both @citrini and @eliant_capital are converging on the same narrative: Leopold Aschenbrenner's AI-momentum
+        fund (Situational Awareness, SALP) took a brutal drawdown as AI/memory names (SK Hynix cited as down ~50% in
+        six weeks) sold off, and both are floating the idea that the liquidation itself marked the bottom.
+        Citrini's long-form take argues SALP's LPs are true believers unlikely to redeem into weakness and are more
+        likely to BTFD once the fund's forced hedging unwinds — which would mean dealers covering delta on the way
+        back up. Eliant_capital independently posted "Liquidate Leopold, & then V it to highs" and "The Leopold
+        Bottom" tagging @agnostoxxx's "meme bottom in momentum" call. Read: this is the single loudest storyline in
+        the tape right now — a violent momentum/AI-beta unwind that both accounts think already happened and is
+        already reversing.
+      </div>
+      <div class="tickers">
+        <span class="ticker">SK Hynix</span><span class="ticker">AI/momentum basket</span><span class="ticker">memory stocks</span>
+      </div>
+      <div class="theme-src">Sources: @citrini (x7 posts, 30–31 Jul), @eliant_capital (x3 posts referencing Leopold/momentum, 30 Jul)</div>
+    </div>
+
+    <div class="theme">
+      <span class="theme-rank">#2</span><span class="theme-tag tag-single">SINGLE ACCOUNT</span>
+      <div class="theme-title">Hyperscaler earnings validating AI capex — MSFT &amp; AMZN</div>
+      <div class="theme-body">
+        @eliant_capital reads Microsoft and Amazon's prints as the market "finally rewarding visible ROI" on AI
+        spend, framing this as the phase of the cycle where hyperscalers rally on improving ROI and semis follow as
+        capex keeps climbing while supply stays constrained. Also RT'd @WarrenPies on hyperscaler cloud revenue
+        growth as the key swing factor for the earnings season and a likely catalyst to normalize low index
+        correlation.
+      </div>
+      <div class="tickers">
+        <span class="ticker">MSFT</span><span class="ticker">AMZN</span><span class="ticker">semis</span>
+      </div>
+      <div class="theme-src">Source: @eliant_capital, 30–31 Jul</div>
+    </div>
+
+    <div class="theme">
+      <span class="theme-rank">#3</span><span class="theme-tag tag-single">SINGLE ACCOUNT</span>
+      <div class="theme-title">Commodities update — gold, silver, uranium, oil</div>
+      <div class="theme-body">
+        @Liathetrader flagged a commodities report covering gold, silver, uranium and oil, pointing followers to
+        their newsletter/TMAD app for the underlying data. No specific directional call included in the public post.
+      </div>
+      <div class="tickers">
+        <span class="ticker">Gold</span><span class="ticker">Silver</span><span class="ticker">Uranium</span><span class="ticker">Oil</span>
+      </div>
+      <div class="theme-src">Source: @Liathetrader, 31 Jul</div>
+    </div>
+
+    <div class="theme">
+      <span class="theme-rank">—</span><span class="theme-tag tag-single">MACRO / POLITICAL CONTEXT</span>
+      <div class="theme-title">TrumpDailyPosts — Spain / Sharia law rhetoric</div>
+      <div class="theme-body">
+        Political post on Spain, no direct market or policy angle (no tariff/trade content in this window). Included
+        for macro-context tracking only — not treated as a trading signal.
+      </div>
+      <div class="macro-note">Flagged per instructions: TrumpDailyPosts content is context, not a stock call.</div>
+      <div class="theme-src">Source: @TrumpDailyPosts, 31 Jul</div>
+    </div>
+
+  </div>
+
+  <div class="section">
+    <div class="section-head">Account Feed (active)</div>
+
+    <div class="account-block">
+      <div class="account-head"><span class="handle">@citrini</span><span class="count">7 posts</span></div>
+      <div class="tweet"><div class="tweet-text">"Imagine, for a moment, you are an LP in Situational Awareness... I don't think @leopoldasch is in trouble so much as he's likely to raise the capital he's asking for, which would mean it's more likely now that Leopold causes the bottom than causes AI to continue going down."</div><div class="tweet-meta">30 Jul, 06:44 UTC · 2,708 likes · 943k views</div></div>
+      <div class="tweet"><div class="tweet-text">"Just had a nightmare. Everything was the same, except people were back to valuing memory stocks on a multiple of book value. Too scared to go back to sleep now."</div><div class="tweet-meta">30 Jul, 06:16 UTC · 866 likes · 95k views</div></div>
+      <div class="tweet"><div class="tweet-text">"This was immediately wrong but at least it still looks like Leopold was, indeed, about to cause the bottom!"</div><div class="tweet-meta">30 Jul, 16:16 UTC · 884 likes · 162k views</div></div>
+      <div class="tweet"><div class="tweet-text">"Who's making the 'I made it through the historical momentum drawdown and all I got was this T-shirt' shirts?"</div><div class="tweet-meta">30 Jul, 16:07 UTC · 560 likes · 54k views</div></div>
+      <div class="tweet"><div class="tweet-text">"This is kind of what it has felt like being long tech in July" [image]</div><div class="tweet-meta">30 Jul, 14:48 UTC · 309 likes · 78k views</div></div>
+      <div class="tweet"><div class="tweet-text">RT @PythiaR: "Wait so the selloff was entirely technical and everyone found fundamental reasons to backfill the price action yet again?"</div><div class="tweet-meta">30 Jul, 16:32 UTC · 28 RTs · 10k views</div></div>
+      <div class="tweet"><div class="tweet-text">Painting-robot bit (off-topic humor) + link post [no text]</div><div class="tweet-meta">30–31 Jul · misc</div></div>
+    </div>
+
+    <div class="account-block">
+      <div class="account-head"><span class="handle">@eliant_capital</span><span class="count">8 posts</span></div>
+      <div class="tweet"><div class="tweet-text">"'Liquidate Leopold, & then V it to highs'" [image]</div><div class="tweet-meta">30 Jul, 15:13 UTC · 691 likes · 60k views</div></div>
+      <div class="tweet"><div class="tweet-text">"A 'meme bottom' ~ @agnostoxxx in momentum; The Leopold Bottom" [image]</div><div class="tweet-meta">30 Jul, 03:53 UTC · 203 likes · 30k views</div></div>
+      <div class="tweet"><div class="tweet-text">"The part of the cycle where hyperscalers rally on improving ROI & semis rally alongside as spend keeps going up while everyone is still constrained"</div><div class="tweet-meta">30 Jul, 20:26 UTC · 230 likes · 17k views</div></div>
+      <div class="tweet"><div class="tweet-text">RT @WarrenPies: "Hyperscaler cloud revenue growth holds the key to this earnings season and is a likely catalyst to normalize low index corr..."</div><div class="tweet-meta">30 Jul, 19:41 UTC · 31 RTs · 4k views</div></div>
+      <div class="tweet"><div class="tweet-text">"Looks like the market is finally rewarding visible ROI following both Microsoft & Amazon's earnings. Nothing like a bit of price to change sentiment…"</div><div class="tweet-meta">31 Jul, 16:02 UTC · 125 likes · 19k views</div></div>
+      <div class="tweet"><div class="tweet-text">"And it looks like we're in motion..." [image]</div><div class="tweet-meta">31 Jul, 16:06 UTC · 20 likes · 4k views</div></div>
+      <div class="tweet"><div class="tweet-text">"The hindsight in looking back at how obvious these bets were that many missed over shorter-term ROI fears is gonna sting many." [link]</div><div class="tweet-meta">31 Jul, 16:06 UTC · 15 likes · 6k views</div></div>
+      <div class="tweet"><div class="tweet-text">"Kenny G always wins" [image, off-topic]</div><div class="tweet-meta">30 Jul, 15:35 UTC · 215 likes · 146k views</div></div>
+    </div>
+
+    <div class="account-block">
+      <div class="account-head"><span class="handle">@Liathetrader</span><span class="count">1 post</span></div>
+      <div class="tweet"><div class="tweet-text">"Commodities report just dropped. What's up with gold, silver and uranium + oil based on our data? Know that each member of our newsletter has an access to TMAD app."</div><div class="tweet-meta">31 Jul, 01:42 UTC · 14 likes · 5k views</div></div>
+    </div>
+
+    <div class="account-block">
+      <div class="account-head"><span class="handle">@TrumpDailyPosts</span><span class="count">1 post</span></div>
+      <div class="tweet"><div class="tweet-text">"Spain has fallen. We will never allow Sharia law in this country. Never."</div><div class="tweet-meta">31 Jul, 13:53 UTC · 17,972 likes · 1.07M views · macro/political context, not a financial signal</div></div>
+    </div>
+
+  </div>
+
+  <div class="section">
+    <div class="section-head">Silent Accounts (11 / 15)</div>
+    <div class="silent-list">
+      <span class="silent-pill">@PurpleDrink_LLC</span>
+      <span class="silent-pill">@agnostoxxx</span>
+      <span class="silent-pill">@jam_croissant</span>
+      <span class="silent-pill">@Yam_Trades</span>
+      <span class="silent-pill">@PharmD_KS</span>
+      <span class="silent-pill">@jbulltard1</span>
+      <span class="silent-pill">@wallstengine</span>
+      <span class="silent-pill">@Sino_Market</span>
+      <span class="silent-pill">@ConnorJBates_</span>
+      <span class="silent-pill">@DannyDayan5</span>
+      <span class="silent-pill">@peonyKingOF</span>
+    </div>
+  </div>
+
+  <footer>
+    Generated via Apify dami_studio/tweet-scraper · sort=Latest · includeReplies=false · since=2026-07-30 ·
+    19 tweets collected across 4 active handles · no tweets found for 11 handles in window (accurate silence, not backfilled).
+  </footer>
+
+</div>
+
+<script>
+  const handles = [
+    {h:"PurpleDrink_LLC", active:false},
+    {h:"agnostoxxx", active:false},
+    {h:"citrini", active:true},
+    {h:"jam_croissant", active:false},
+    {h:"Yam_Trades", active:false},
+    {h:"PharmD_KS", active:false},
+    {h:"jbulltard1", active:false},
+    {h:"wallstengine", active:false},
+    {h:"TrumpDailyPosts", active:true},
+    {h:"Sino_Market", active:false},
+    {h:"ConnorJBates_", active:false},
+    {h:"Liathetrader", active:true},
+    {h:"DannyDayan5", active:false},
+    {h:"peonyKingOF", active:false},
+    {h:"eliant_capital", active:true},
+  ];
+  function pillHtml(){
+    return handles.map(x => `<span><span class="dot ${x.active?'active':'silent'}"></span>@${x.h} ${x.active?'ACTIVE':'SILENT'}</span>`).join('');
+  }
+  document.getElementById('tapeInner').innerHTML = pillHtml() + pillHtml();
+</script>
+
+</body>
+</html>
