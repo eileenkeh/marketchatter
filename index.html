@@ -3,268 +3,313 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
-<title>Market Chatter Digest — 22.08.2026</title>
+<title>Market Chatter Digest — 23.08.2026</title>
 <style>
-:root{
---bg:#0a0d0a; --panel:#0f140f; --border:#1e2a1e; --green:#39ff88;
---dim:#5a7a5a; --amber:#ffb454; --red:#ff5f5f; --text:#c8e6c8; --white:#eafff0;
-}
-*{box-sizing:border-box;}
-body{
-margin:0; background:var(--bg); color:var(--text);
-font-family:"SF Mono","JetBrains Mono","Courier New",monospace;
-font-size:14px; line-height:1.5;
-}
-.wrap{max-width:900px; margin:0 auto; padding:24px 20px 60px;}
-header{border-bottom:1px solid var(--border); padding-bottom:16px; margin-bottom:20px;}
-.title{color:var(--green); font-size:20px; font-weight:700; letter-spacing:1px;}
-.subtitle{color:var(--dim); font-size:12px; margin-top:4px;}
-.tape{
-overflow:hidden; white-space:nowrap; border:1px solid var(--border);
-background:var(--panel); border-radius:4px; margin:16px 0 24px; padding:10px 0;
-}
-.tape-inner{display:inline-block; animation:scroll 40s linear infinite;}
-.tape-inner span{display:inline-block; padding:0 18px; font-size:12px;}
-.dot{display:inline-block; width:7px; height:7px; border-radius:50%; margin-right:6px;}
-.dot.active{background:var(--green); box-shadow:0 0 6px var(--green);}
-.dot.silent{background:var(--dim);}
-@keyframes scroll{ 0%{transform:translateX(0);} 100%{transform:translateX(-50%);} }
-.section{margin-bottom:28px;}
-.section-head{
-color:var(--amber); font-size:12px; text-transform:uppercase; letter-spacing:2px;
-margin-bottom:12px; border-left:3px solid var(--amber); padding-left:8px;
-}
-.section-note{color:var(--dim); font-size:12px; margin:-6px 0 14px;}
-.theme{
-border:1px solid var(--border); background:var(--panel); border-radius:4px;
-padding:12px 14px; margin-bottom:10px;
-}
-.theme-rank{color:var(--dim); font-size:11px;}
-.theme-tag{display:inline-block; font-size:10px; padding:2px 7px; border-radius:3px; margin-left:8px; vertical-align:middle;}
-.tag-cross{background:rgba(57,255,136,0.12); color:var(--green); border:1px solid rgba(57,255,136,0.35);}
-.tag-single{background:rgba(255,180,84,0.1); color:var(--amber); border:1px solid rgba(255,180,84,0.3);}
-.theme-title{color:var(--white); font-size:14px; font-weight:600; margin:4px 0 6px;}
-.theme-body{color:var(--text); font-size:13px;}
-.theme-src{color:var(--dim); font-size:11px; margin-top:6px;}
-.tickers{margin-top:6px;}
-.ticker{
-display:inline-block; background:rgba(57,255,136,0.08); color:var(--green);
-border:1px solid rgba(57,255,136,0.3); font-size:11px; padding:2px 8px;
-border-radius:3px; margin-right:6px; margin-top:4px;
-}
-.account-block{
-border:1px solid var(--border); background:var(--panel); border-radius:4px;
-margin-bottom:14px; overflow:hidden;
-}
-.account-head{
-display:flex; align-items:center; justify-content:space-between;
-padding:9px 14px; background:rgba(57,255,136,0.05); border-bottom:1px solid var(--border);
-}
-.handle{color:var(--green); font-weight:700; font-size:13px;}
-.count{color:var(--dim); font-size:11px;}
-.tweet{padding:10px 14px; border-bottom:1px solid var(--border); font-size:13px;}
-.tweet:last-child{border-bottom:none;}
-.tweet-text{color:var(--text); white-space:pre-wrap;}
-.tweet-meta{color:var(--dim); font-size:11px; margin-top:5px;}
-.tweet-meta a{color:var(--dim);}
-.silent-list{
-display:flex; flex-wrap:wrap; gap:8px; border:1px solid var(--border);
-background:var(--panel); border-radius:4px; padding:14px;
-}
-.silent-pill{
-color:var(--dim); font-size:12px; border:1px solid var(--border);
-padding:4px 10px; border-radius:12px;
-}
-footer{color:var(--dim); font-size:11px; margin-top:30px; border-top:1px solid var(--border); padding-top:14px;}
-.macro-note{
-border-left:3px solid var(--red); background:rgba(255,95,95,0.06); padding:8px 12px;
-font-size:12px; color:var(--text); margin-top:6px;
-}
-@media (max-width: 600px){
-body{font-size:19px;}
-.title{font-size:22px;}
-.subtitle{font-size:16px; line-height:1.7;}
-.tape-inner span{font-size:16px;}
-.section-head{font-size:16px;}
-.theme-title{font-size:19px; line-height:1.45;}
-.theme-body{font-size:18px; line-height:1.7;}
-.theme-src{font-size:15px;}
-.ticker{font-size:15px;}
-.handle{font-size:18px;}
-.count{font-size:15px;}
-.tweet-text{font-size:18px; line-height:1.7;}
-.tweet-meta{font-size:15px;}
-.silent-pill{font-size:16px;}
-footer{font-size:15px; line-height:1.7;}
-}
+  :root{
+    --bg:#0a0e14;
+    --bg-panel:#0f141d;
+    --border:#1e2733;
+    --green:#3ddc84;
+    --amber:#e8a33d;
+    --red:#e85d5d;
+    --grey:#5a6472;
+    --text:#c9d1d9;
+    --dim:#7d8894;
+    --mono:'SFMono-Regular','Consolas','Liberation Mono',Menlo,Courier,monospace;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--mono);
+    font-size:16px;
+    line-height:1.6;
+    padding:0 0 40px;
+  }
+  a{color:var(--green);}
+  .wrap{max-width:820px;margin:0 auto;padding:28px 20px 0;}
+  .prompt{color:var(--green);opacity:.8;font-size:14px;margin-bottom:6px;}
+  .title{font-size:26px;color:#fff;font-weight:700;letter-spacing:.5px;margin:0 0 8px;}
+  .subtitle{color:var(--dim);font-size:14px;line-height:1.6;margin-bottom:22px;}
+  .subtitle b{color:var(--text);}
+
+  .tape{
+    border-top:1px solid var(--border);
+    border-bottom:1px solid var(--border);
+    background:var(--bg-panel);
+    overflow:hidden;
+    white-space:nowrap;
+    padding:10px 0;
+    margin-bottom:26px;
+  }
+  .tape-inner{display:inline-block;padding-left:100%;animation:scroll 32s linear infinite;}
+  .tape-inner span{font-size:14px;margin-right:34px;}
+  .tape-inner span.active{color:var(--green);}
+  .tape-inner span.silent{color:var(--grey);}
+  @keyframes scroll{from{transform:translateX(0);}to{transform:translateX(-100%);}}
+
+  .section-head{
+    font-size:14px;
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+    color:var(--amber);
+    border-left:3px solid var(--amber);
+    padding-left:10px;
+    margin:34px 0 14px;
+  }
+  .meta-line{color:var(--dim);font-size:13px;margin-bottom:18px;}
+
+  .theme{
+    background:var(--bg-panel);
+    border:1px solid var(--border);
+    border-radius:6px;
+    padding:16px 18px;
+    margin-bottom:14px;
+  }
+  .theme.low{opacity:.7;}
+  .theme-tag{
+    display:inline-block;
+    font-size:11px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    padding:2px 8px;
+    border-radius:3px;
+    margin-bottom:8px;
+  }
+  .tag-cross{background:rgba(61,220,132,.15);color:var(--green);border:1px solid rgba(61,220,132,.4);}
+  .tag-single{background:rgba(232,163,61,.12);color:var(--amber);border:1px solid rgba(232,163,61,.35);}
+  .tag-low{background:rgba(90,100,114,.15);color:var(--grey);border:1px solid rgba(90,100,114,.35);}
+  .theme-title{font-size:17px;color:#fff;font-weight:600;margin:0 0 8px;line-height:1.35;}
+  .theme-body{font-size:15px;color:var(--text);line-height:1.6;margin:0 0 8px;}
+  .theme-src{font-size:13px;color:var(--dim);}
+  .ticker{
+    display:inline-block;
+    font-size:13px;
+    color:var(--green);
+    background:rgba(61,220,132,.1);
+    border:1px solid rgba(61,220,132,.3);
+    border-radius:3px;
+    padding:1px 6px;
+    margin:0 3px;
+  }
+
+  .account{margin-bottom:22px;}
+  .account-head{
+    display:flex;
+    align-items:baseline;
+    gap:10px;
+    border-bottom:1px solid var(--border);
+    padding-bottom:6px;
+    margin-bottom:10px;
+  }
+  .handle{font-size:16px;color:#fff;font-weight:700;}
+  .count{font-size:13px;color:var(--dim);}
+  .tweet{padding:10px 0;border-bottom:1px dashed var(--border);}
+  .tweet:last-child{border-bottom:none;}
+  .tweet-text{font-size:15px;color:var(--text);line-height:1.6;margin:0 0 5px;}
+  .tweet-meta{font-size:13px;color:var(--dim);}
+
+  .silent-list{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-bottom:8px;
+  }
+  .silent-pill{
+    font-size:14px;
+    color:var(--grey);
+    background:rgba(90,100,114,.1);
+    border:1px solid rgba(90,100,114,.3);
+    border-radius:14px;
+    padding:4px 12px;
+  }
+  .silent-note{color:var(--dim);font-size:13px;margin-top:4px;}
+
+  footer{
+    color:var(--dim);
+    font-size:12px;
+    line-height:1.6;
+    border-top:1px solid var(--border);
+    margin-top:34px;
+    padding-top:16px;
+  }
+
+  @media (max-width:600px){
+    body{font-size:19px;}
+    .title{font-size:22px;}
+    .subtitle{font-size:16px;line-height:1.7;}
+    .tape-inner span{font-size:16px;}
+    .section-head{font-size:16px;}
+    .theme-title{font-size:19px;line-height:1.45;}
+    .theme-body{font-size:18px;line-height:1.7;}
+    .theme-src{font-size:15px;}
+    .ticker{font-size:15px;}
+    .handle{font-size:18px;}
+    .count{font-size:15px;}
+    .tweet-text{font-size:18px;line-height:1.7;}
+    .tweet-meta{font-size:15px;}
+    .silent-pill{font-size:16px;}
+    footer{font-size:15px;line-height:1.7;}
+  }
 </style>
 </head>
 <body>
 <div class="wrap">
 
-<header>
-<div class="title">&gt; MARKET_CHATTER_DIGEST</div>
-<div class="subtitle">22.08.2026 · window: 20.08.2026–22.08.2026 (36–40h, SGT-adjusted) · 15 tracked handles · sort: latest, no replies</div>
-</header>
+  <div class="prompt">&gt; MARKET_CHATTER_DIGEST</div>
+  <div class="title">Market Chatter Digest — 23.08.2026</div>
+  <div class="subtitle">
+    23.08.2026 · window: <b>21.08.2026–23.08.2026</b> (36–40h, SGT-adjusted) · 15 tracked handles · sort: latest, no replies
+  </div>
 
-<div class="tape">
-<div class="tape-inner" id="tapeInner"></div>
-</div>
+  <div class="tape">
+    <div class="tape-inner">
+      <span class="active">@citrini</span>
+      <span class="active">@eliant_capital</span>
+      <span class="active">@PharmD_KS</span>
+      <span class="silent">@PurpleDrink_LLC</span>
+      <span class="silent">@agnostoxxx</span>
+      <span class="silent">@jam_croissant</span>
+      <span class="silent">@Yam_Trades</span>
+      <span class="silent">@jbulltard1</span>
+      <span class="silent">@wallstengine</span>
+      <span class="silent">@TrumpDailyPosts</span>
+      <span class="silent">@Sino_Market</span>
+      <span class="silent">@ConnorJBates_</span>
+      <span class="silent">@Liathetrader</span>
+      <span class="silent">@DannyDayan5</span>
+      <span class="silent">@peonyKingOF</span>
+      &nbsp;&nbsp;·&nbsp;&nbsp;
+      <span class="active">@citrini</span>
+      <span class="active">@eliant_capital</span>
+      <span class="active">@PharmD_KS</span>
+      <span class="silent">@PurpleDrink_LLC</span>
+      <span class="silent">@agnostoxxx</span>
+      <span class="silent">@jam_croissant</span>
+      <span class="silent">@Yam_Trades</span>
+      <span class="silent">@jbulltard1</span>
+      <span class="silent">@wallstengine</span>
+      <span class="silent">@TrumpDailyPosts</span>
+      <span class="silent">@Sino_Market</span>
+      <span class="silent">@ConnorJBates_</span>
+      <span class="silent">@Liathetrader</span>
+      <span class="silent">@DannyDayan5</span>
+      <span class="silent">@peonyKingOF</span>
+    </div>
+  </div>
 
-<div class="section">
-<div class="section-head">Ranked Themes</div>
-<div class="section-note">3 of 15 active. One cross-account theme this window (2 accounts). Explicit tickers this window: $MOD, $XBI, $QQQ.</div>
+  <div class="section-head">Ranked Themes</div>
+  <div class="meta-line">3 of 15 active. No cross-account theme this window — three single-account items. Explicit ticker: <span class="ticker">$MOD</span>. Non-equity futures referenced: GC, ES, NQ.</div>
 
-<div class="theme">
-<span class="theme-rank">#1</span><span class="theme-tag tag-cross">CROSS-ACCOUNT (2)</span>
-<div class="theme-title">Treasury long-bond buybacks &amp; the "Bessent Put"</div>
-<div class="theme-body">
-@Liathetrader's GEX/positioning note flagged "FOMC minutes hawkish. Semis weak. Treasury doubling
-long-bond buybacks, yields fell but the structural problem remains." @eliant_capital ran the same thread
-harder across the window: "US Treasury Secretary Bessent on bonds: The buyback could be more than 4
-billion - CNBC. That didn't take long," then "And now it looks like we understand why… The 'Bessent Put'
-was born this week," plus a chart note that "the 10Y &amp; 30Y have retraced the entirety of yesterday's
-move following the announcement." Two independent accounts landing on the same read — Treasury buyback
-mechanics are now driving the long end, not just background noise.
-</div>
-<div class="theme-src">Source: @Liathetrader, @eliant_capital (20–21 Aug)</div>
-</div>
+  <div class="theme">
+    <span class="theme-tag tag-single">#1 · Single Account</span>
+    <div class="theme-title">Eliant Capital — debasement trade &amp; crypto call run on, no new thesis</div>
+    <div class="theme-body">
+      Self-RT'd his own recent posts again this window: "A great opportunity for the debasement trade" and
+      "Crypto about to go on a vengeance run" — same framing carried over from the prior window, not a fresh call.
+      Also ran a quote-tweet with an image and no caption, and quote-tweeted a @firstsquawk headline via reply
+      with no added commentary. Continuation of his running macro/debasement thread, nothing new to flag.
+    </div>
+    <div class="theme-src">Source: @eliant_capital, 21 Aug</div>
+  </div>
 
-<div class="theme">
-<span class="theme-rank">#2</span><span class="theme-tag tag-single">SINGLE ACCOUNT</span>
-<div class="theme-title">Eliant Capital — debasement trade &amp; crypto "vengeance run"</div>
-<div class="theme-body">
-Two back-to-back RTs of himself: "A great opportunity for the debasement trade" (paired with a chart) and
-"Crypto about to go on a vengeance run." Continuation of his running dollar-debasement thesis rather than a
-new call, but the crypto framing is new for this window.
-</div>
-<div class="theme-src">Source: @eliant_capital, 21 Aug</div>
-</div>
+  <div class="theme">
+    <span class="theme-tag tag-single">#2 · Single Account</span>
+    <div class="theme-title">Citrini — Google confirmed as Modine's hyperscaler counterparty</div>
+    <div class="theme-body">
+      RT'd @hntrbrkmedia: "BREAKING: Google is the unnamed hyperscaler behind Modine's new $4 billion agreement.
+      <span class="ticker">$MOD</span> also has billions in demand…" No added commentary from Citrini — the only
+      explicit ticker mention across all tracked accounts this window.
+    </div>
+    <div class="theme-src">Source: @citrini (RT @hntrbrkmedia), 21 Aug</div>
+  </div>
 
-<div class="theme">
-<span class="theme-rank">#3</span><span class="theme-tag tag-single">SINGLE ACCOUNT</span>
-<div class="theme-title">Eliant Capital — debt-for-T-Bills-backed-stablecoins (RT @LukeGromen)</div>
-<div class="theme-body">
-RT'd @LukeGromen: "This could prove 100% accurate if he swaps ALL the Federal debt for T-Bills, then uses
-those T-Bills to back 0% yielding st[ablecoins]…" (thread cut off in scrape). Ties into the same
-debt/debasement macro thread as the theme above, but distinct enough — a specific debt-restructuring
-mechanism, not just "own hard assets."
-</div>
-<div class="theme-src">Source: @eliant_capital (RT @LukeGromen), 20 Aug</div>
-</div>
+  <div class="theme">
+    <span class="theme-tag tag-single">#3 · Single Account</span>
+    <div class="theme-title">PharmD_KS — weekly futures analysis note flagged (GC, ES, NQ)</div>
+    <div class="theme-body">
+      Posted: "Market Analysis for the Week of 8/23 (GC, ES, NQ) is out for subscribers." Gated content — no
+      thesis visible in the public tweet — but signals he's actively framing gold, S&amp;P, and Nasdaq futures
+      positioning heading into the week.
+    </div>
+    <div class="theme-src">Source: @PharmD_KS, 22 Aug</div>
+  </div>
 
-<div class="theme">
-<span class="theme-rank">#4</span><span class="theme-tag tag-single">SINGLE ACCOUNT</span>
-<div class="theme-title">Citrini — Long XBI / Short QQQ pairs trade</div>
-<div class="theme-body">
-Floated a pairs trade with no follow-through thesis attached: "Long XBI Short QQQ?" The only explicit
-directional trade idea from any tracked account this window.
-</div>
-<div class="theme-src">Source: @citrini, 20 Aug</div>
-</div>
+  <div class="theme low">
+    <span class="theme-tag tag-low">Low Signal</span>
+    <div class="theme-title">Housekeeping / off-topic</div>
+    <div class="theme-body">
+      @citrini RT'd a joke about his own handle sounding like a cocktail name — no market content.
+    </div>
+    <div class="theme-src">Source: @citrini, 21 Aug</div>
+  </div>
 
-<div class="theme">
-<span class="theme-rank">#5</span><span class="theme-tag tag-single">SINGLE ACCOUNT</span>
-<div class="theme-title">Citrini — Google confirmed as Modine's hyperscaler counterparty</div>
-<div class="theme-body">
-RT'd @hntrbrkmedia: "BREAKING: Google is the unnamed hyperscaler behind Modine's new $4 billion agreement.
-$MOD also has billions in demand…" No added commentary from Citrini, but it's the only explicit ticker
-tied to a named hyperscaler deal this window.
-</div>
-<div class="theme-src">Source: @citrini (RT @hntrbrkmedia), 21 Aug</div>
-</div>
+  <div class="section-head">Account Feed (active)</div>
 
-<div class="theme">
-<span class="theme-rank">—</span><span class="theme-tag tag-single">LOW SIGNAL</span>
-<div class="theme-title">Housekeeping / off-topic</div>
-<div class="theme-body">
-@citrini RT'd a joke about his own handle sounding like a cocktail name — no market content.
-</div>
-<div class="theme-src">Source: @citrini, 21 Aug</div>
-</div>
+  <div class="account">
+    <div class="account-head"><span class="handle">@eliant_capital</span><span class="count">4 posts</span></div>
+    <div class="tweet">
+      <div class="tweet-text">[quote-tweet with image, no caption]</div>
+      <div class="tweet-meta">21 Aug, 20:56 UTC · 196 likes · 14.9k views</div>
+    </div>
+    <div class="tweet">
+      <div class="tweet-text">RT @eliant_capital: Crypto about to go on a vengeance run</div>
+      <div class="tweet-meta">21 Aug, 17:20 UTC · 14 RTs</div>
+    </div>
+    <div class="tweet">
+      <div class="tweet-text">RT @eliant_capital: A great opportunity for the debasement trade [image]</div>
+      <div class="tweet-meta">21 Aug, 17:10 UTC · 11 RTs</div>
+    </div>
+    <div class="tweet">
+      <div class="tweet-text">[reply, quote-tweeting @firstsquawk]</div>
+      <div class="tweet-meta">21 Aug, 02:06 UTC · 22 likes · 7.4k views</div>
+    </div>
+  </div>
 
-</div>
+  <div class="account">
+    <div class="account-head"><span class="handle">@citrini</span><span class="count">2 posts</span></div>
+    <div class="tweet">
+      <div class="tweet-text">RT @GoingBallistic5: If you thought citrini sounds like a great cocktail name you'd be right — a citrus martini portmanteau. Analyst #2 ta…</div>
+      <div class="tweet-meta">21 Aug, 17:45 UTC · 2 RTs · 11.1k views</div>
+    </div>
+    <div class="tweet">
+      <div class="tweet-text">RT @hntrbrkmedia: BREAKING: Google is the unnamed hyperscaler behind Modine's new $4 billion agreement. $MOD also has billions in demand…</div>
+      <div class="tweet-meta">21 Aug, 15:25 UTC · 27 RTs · 11.0k views</div>
+    </div>
+  </div>
 
-<div class="section">
-<div class="section-head">Account Feed (active)</div>
+  <div class="account">
+    <div class="account-head"><span class="handle">@PharmD_KS</span><span class="count">1 new post</span></div>
+    <div class="tweet">
+      <div class="tweet-text">Market Analysis for the Week of 8/23 (GC, ES, NQ) is out for subscribers.</div>
+      <div class="tweet-meta">22 Aug, 20:12 UTC · 7 likes · 2.7k views</div>
+    </div>
+  </div>
 
-<div class="account-block">
-<div class="account-head"><span class="handle">@eliant_capital</span><span class="count">9 new posts</span></div>
-<div class="tweet"><div class="tweet-text">[quote-tweet with image, no caption]</div><div class="tweet-meta">21 Aug, 20:56 UTC · 142 likes · 10.6k views</div></div>
-<div class="tweet"><div class="tweet-text">RT @eliant_capital: Crypto about to go on a vengeance run</div><div class="tweet-meta">21 Aug, 17:20 UTC · 12 RTs</div></div>
-<div class="tweet"><div class="tweet-text">RT @eliant_capital: A great opportunity for the debasement trade [image]</div><div class="tweet-meta">21 Aug, 17:10 UTC · 11 RTs</div></div>
-<div class="tweet"><div class="tweet-text">[reply, quote-tweeting @firstsquawk]</div><div class="tweet-meta">21 Aug, 02:06 UTC · 22 likes · 7.3k views</div></div>
-<div class="tweet"><div class="tweet-text">And now it looks like we understand why… The "Bessent Put" was born this week.</div><div class="tweet-meta">20 Aug, 23:24 UTC · 239 likes · 34.4k views</div></div>
-<div class="tweet"><div class="tweet-text">RT @LynAldenContact: [gif, no caption]</div><div class="tweet-meta">20 Aug, 19:10 UTC · 246 RTs · 3.8k views</div></div>
-<div class="tweet"><div class="tweet-text">RT @LukeGromen: This could prove 100% accurate if he swaps ALL the Federal debt for T-Bills, then uses those T-Bills to back 0% yielding st…</div><div class="tweet-meta">20 Aug, 16:50 UTC · 387 RTs · 4.0k views</div></div>
-<div class="tweet"><div class="tweet-text">US Treasury Secretary Bessent on bonds: The buyback could be more than 4 billion - CNBC. That didn't take long</div><div class="tweet-meta">20 Aug, 15:03 UTC · 199 likes · 28.8k views</div></div>
-<div class="tweet"><div class="tweet-text">"Sir, the 10Y &amp; 30Y have retraced the entirety of yesterday's move following the announcement." [image]</div><div class="tweet-meta">20 Aug, 13:14 UTC · 1021 likes · 75.0k views</div></div>
-</div>
+  <div class="section-head">Silent Accounts (12 / 15)</div>
+  <div class="silent-list">
+    <span class="silent-pill">@PurpleDrink_LLC</span>
+    <span class="silent-pill">@agnostoxxx</span>
+    <span class="silent-pill">@jam_croissant</span>
+    <span class="silent-pill">@Yam_Trades</span>
+    <span class="silent-pill">@jbulltard1</span>
+    <span class="silent-pill">@wallstengine</span>
+    <span class="silent-pill">@TrumpDailyPosts</span>
+    <span class="silent-pill">@Sino_Market</span>
+    <span class="silent-pill">@ConnorJBates_</span>
+    <span class="silent-pill">@Liathetrader</span>
+    <span class="silent-pill">@DannyDayan5</span>
+    <span class="silent-pill">@peonyKingOF</span>
+  </div>
+  <div class="silent-note">TrumpDailyPosts silent — no macro/political signal this window.</div>
 
-<div class="account-block">
-<div class="account-head"><span class="handle">@citrini</span><span class="count">3 new posts</span></div>
-<div class="tweet"><div class="tweet-text">RT @GoingBallistic5: If you thought citrini sounds like a great cocktail name you'd be right — a citrus martini portmanteau. Analyst #2 ta…</div><div class="tweet-meta">21 Aug, 17:45 UTC · 2 RTs · 9.8k views</div></div>
-<div class="tweet"><div class="tweet-text">RT @hntrbrkmedia: BREAKING: Google is the unnamed hyperscaler behind Modine's new $4 billion agreement. $MOD also has billions in demand…</div><div class="tweet-meta">21 Aug, 15:25 UTC · 25 RTs · 10.1k views</div></div>
-<div class="tweet"><div class="tweet-text">Long XBI Short QQQ?</div><div class="tweet-meta">20 Aug, 02:46 UTC · 376 likes · 97.8k views</div></div>
-</div>
-
-<div class="account-block">
-<div class="account-head"><span class="handle">@Liathetrader</span><span class="count">1 new post</span></div>
-<div class="tweet"><div class="tweet-text">When the market gets choppy and news-driven, short-term moves become almost impossible to predict. That's exactly when most traders get worn out or scared out. We don't fight it, we zoom out. GEX by Expiry and longer-term GEX by Strike filter out the noise and show you where real positioning. FOMC minutes hawkish. Semis weak. Treasury doubling long-bond buybacks, yields fell but the structural problem remains. Read full report 👇👇👇👇</div><div class="tweet-meta">20 Aug, 00:53 UTC · 45 likes · 7.1k views</div></div>
-</div>
-
-</div>
-
-<div class="section">
-<div class="section-head">Silent Accounts (12 / 15)</div>
-<div class="silent-list">
-<span class="silent-pill">@PurpleDrink_LLC</span>
-<span class="silent-pill">@agnostoxxx</span>
-<span class="silent-pill">@jam_croissant</span>
-<span class="silent-pill">@Yam_Trades</span>
-<span class="silent-pill">@PharmD_KS</span>
-<span class="silent-pill">@jbulltard1</span>
-<span class="silent-pill">@wallstengine</span>
-<span class="silent-pill">@TrumpDailyPosts</span>
-<span class="silent-pill">@Sino_Market</span>
-<span class="silent-pill">@ConnorJBates_</span>
-<span class="silent-pill">@DannyDayan5</span>
-<span class="silent-pill">@peonyKingOF</span>
-</div>
-</div>
-
-<footer>
-Generated via Apify dami_studio/tweet-scraper · sort=Latest · includeReplies=false · since=2026-08-20 ·
-13 tweets collected across 3 active handles · no tweets found for 12 handles in window (accurate silence,
-not backfilled) · explicit tickers this window: $MOD, $XBI, $QQQ · TrumpDailyPosts silent — no macro/political
-signal this window.
-</footer>
+  <footer>
+    Generated via Apify dami_studio/tweet-scraper · sort=Latest · includeReplies=false · since=2026-08-21 ·
+    7 tweets collected across 3 active handles · no tweets found for 12 handles in window (accurate silence,
+    not backfilled) · explicit ticker this window: $MOD · non-equity futures referenced: GC, ES, NQ.
+  </footer>
 
 </div>
-
-<script>
-const handles = [
-{h:"PurpleDrink_LLC", active:false},
-{h:"agnostoxxx", active:false},
-{h:"citrini", active:true},
-{h:"jam_croissant", active:false},
-{h:"Yam_Trades", active:false},
-{h:"PharmD_KS", active:false},
-{h:"jbulltard1", active:false},
-{h:"wallstengine", active:false},
-{h:"TrumpDailyPosts", active:false},
-{h:"Sino_Market", active:false},
-{h:"ConnorJBates_", active:false},
-{h:"Liathetrader", active:true},
-{h:"DannyDayan5", active:false},
-{h:"peonyKingOF", active:false},
-{h:"eliant_capital", active:true},
-];
-function pillHtml(){
-return handles.map(x => `<span><span class="dot ${x.active?'active':'silent'}"></span>@${x.h} ${x.active?'ACTIVE':'SILENT'}</span>`).join('');
-}
-document.getElementById('tapeInner').innerHTML = pillHtml() + pillHtml();
-</script>
-
 </body>
 </html>
